@@ -1,7 +1,8 @@
 #encoding:utf-8
 from appium import webdriver
+from time import sleep
 
-global wd 
+
 def star_up_appium():
     desired_caps={}
     desired_caps['platformName']='Android'
@@ -15,6 +16,3 @@ def star_up_appium():
     wd=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
     sleep(3)
     return wd 
-
-def stop_appium():
-    return wd.quit()
